@@ -1,19 +1,12 @@
 server:
-  port: 8202
-
+  port: 8102
 spring:
   application:
-    name: cloudnet-client
+    name: cloudnet-service
   cloud:
     loadbalancer:
-      ribbon:
-        #默认就是开启了 ribbon的负载均衡
-        #如果为 false 就说不从eureka中获取服务列表 也就是自定义配置列表 （写死）
-        #micro-order.ribbon.listOfServers=localhost:9901,localhost:9902
-        enabled: true
       retry:
         enabled: false
-
 
 eureka:
   instance:
@@ -24,14 +17,6 @@ eureka:
     #30s发送一次心跳 到注册中心,不配置默认也是30s
     lease-renewal-interval-in-seconds: 30
   client:
-    healthcheck:
-      enabled: true
     service-url:
       defaultZone: http://admin:123456@localhost:8001/eureka/
-
-ribbon:
-  eureka:
-    # true： 从eureka中获取到服务列表
-    enabled: true
-
 
