@@ -1,6 +1,2 @@
-ribbon:
-  eureka:
-    # true： 从eureka中获取到服务列表
-    enabled: true
-
+version: 2.2.2
 
